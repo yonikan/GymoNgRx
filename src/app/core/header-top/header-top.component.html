@@ -1,0 +1,82 @@
+<div class="header-top-wrapper" >
+  <div class="actions">
+
+        <span class="animation-wrapper" mdTooltip="Monitoring" (click)="openMonitorDialog()">
+          <i class="material-icons">directions_run</i>
+          <i class="material-icons animation">cached</i>
+        </span>
+
+        <span class="notification-wrapper" mdTooltip="Notification" [mdMenuTriggerFor]="notificationMenu">
+            <i class="material-icons" >notifications</i> 
+            <span class="badge">4</span>              
+        </span>
+
+        <span mdTooltip="My Account" [mdMenuTriggerFor]="accountMenu">
+              <!-- <i class="material-icons">account_box</i> {{ (authService.user | async)?.email }} -->
+              <i class="material-icons">account_box</i> testt
+              
+        </span>
+
+        <md-menu #accountMenu="mdMenu">
+            <!-- <button md-menu-item *ngIf="authService.user | async" routerLink="/settings">               -->
+            <button md-menu-item routerLinkActive="active" routerLink="/profile">
+                <md-icon>settings</md-icon>
+                <span>Settings</span>
+            </button>
+
+            <button md-menu-item (click)="logout()">
+                  <md-icon>open_in_new</md-icon>
+                  <span>Log out</span>
+            </button>
+
+        </md-menu>
+        
+        <md-menu #notificationMenu="mdMenu" class="notifications">
+          <md-list>
+
+            <md-list-item>
+                <h2>Notifications</h2>
+            </md-list-item>
+            
+            <md-divider></md-divider>
+            
+
+            <md-list-item >             
+              <img md-list-avatar class="avatar-mine " src="../../assets/img/profile-sm.jpg">
+              <h3 md-line>Title 1</h3>
+              <p md-line>
+                <span>An awesome description</span>
+              </p>
+            </md-list-item>
+
+            <md-divider></md-divider>
+            
+            <md-list-item>
+              <img md-list-avatar  src="../../assets/img/profile-sm.jpg"> 
+              <h3 md-line>Title 2</h3>
+              <p md-line>
+                <span>Another awesome description</span>
+              </p>
+            </md-list-item>
+
+            <md-divider></md-divider>
+
+            <md-list-item>
+              <img md-list-avatar  src="../../assets/img/profile-sm.jpg"> 
+              <h3 md-line>Title 3</h3>
+              <p md-line>
+                <span>Yet another awesome description</span>
+              </p>
+            </md-list-item>
+
+              <md-divider></md-divider>
+              
+              <md-list-item>
+                  <h2><a routerLink="/notifications">View Full Changelog</a></h2>
+              </md-list-item>
+
+
+          </md-list>
+        </md-menu>
+  </div> 
+</div>

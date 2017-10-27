@@ -1,0 +1,11 @@
+<div class="" >
+    
+    <h2>Profile</h2>
+
+    <md-select placeholder="Role" name="role">
+        <md-option *ngFor="let role of roles" [value]="role.value">
+        {{role.viewValue}}
+        </md-option>
+    </md-select>
+
+</div>
